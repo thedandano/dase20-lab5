@@ -6,14 +6,16 @@
         <input type="text" name="keyword" placeholder="Type keyword">
         <br><br>
         <button>Search</button>
+        <br><a id="favLink" href="/getKeywords"> See Favorites </a>
       </form>
       <hr>
-      <% imageUrlArray.forEach( (imageUrl, i) => { %>
-          <%- (i % 3 == 0) ? "<br>" : "" %> 
-            <img src="<%= imageUrl %>" width="200" height="200">
-            <img class="favoriteIcon" src="img/favorite.png" width="20">
-      <% }); %> 
-      
+      <div id="resultsContainer">
+        <% imageUrlArray.forEach( function(imageUrl, i) { %>
+            <%- (i % 3 == 0) ? "<br>" : "" %> 
+              <img src="<%= imageUrl %>" width="200" height="200">
+              <img class="favoriteIcon" src="img/favorite.png" width="20">
+        <% }); %> 
+      </div>  
     </main>
     <%- include("partials/footer.ejs") %> 
   </body>
